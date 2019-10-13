@@ -2,7 +2,7 @@
   "name": "react-connect-ctx",
   "version": "1.0.3",
   "description": "Easily connect functional component with the context ",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
     "build": "webpack --config config/webpack.config.js",
