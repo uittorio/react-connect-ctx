@@ -17,7 +17,11 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx$/,
-                loader: 'awesome-typescript-loader'
+                loader: 'ts-loader',
+                options: {
+                    onlyCompileBundledFiles: true,
+                    configFile: './tsconfig.test.json'
+                }
             }
         ]
     },
@@ -30,8 +34,7 @@ module.exports = {
         new CopyPlugin([
             { from: 'package.json' },
             { from: 'README.md' },
-            { from: './index.ts' },
-            { from: './connectContext.tsx' }
+            { from: 'index.d.ts' }
         ]),
     ]
 };

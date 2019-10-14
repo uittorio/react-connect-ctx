@@ -1,20 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noUnusedParameters": true,
-    "noUnusedLocals": true,
     "removeComments": false,
-    "noImplicitAny": true,
     "jsx": "react",
     "esModuleInterop": true,
-    "lib": ["es2017", "dom"],
-    "baseUrl": "./",
-    "declaration": true,
-    "outDir": "./dist"
+    "noImplicitAny": false,
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "baseUrl": "./"
   }
 }
