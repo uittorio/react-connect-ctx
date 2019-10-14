@@ -4,7 +4,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: './src/index.ts'
+        index: './index.ts'
     },
     externals: {
         'react': 'react'
@@ -30,7 +30,8 @@ module.exports = {
         new CopyPlugin([
             { from: 'package.json' },
             { from: 'README.md' },
-            { from: './src/index.ts' },
+            { from: './index.ts' },
+            { from: './connectContext.tsx' }
         ]),
     ]
 };

@@ -1,4 +1,4 @@
-import { connectContext } from '../src';
+import { connectContext } from '../index';
 import * as React from 'react';
 import { render } from "react-dom";
 import { act } from 'react-dom/test-utils';
