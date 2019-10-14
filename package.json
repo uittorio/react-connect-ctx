@@ -1,6 +1,6 @@
 {
   "name": "react-connect-ctx",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Easily connect functional component with the context ",
   "main": "index.js",
   "scripts": {
