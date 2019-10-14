@@ -27,4 +27,4 @@ export default connectContext(APP_CONTEXT)(
 });
 
 ```
-[## Full Example](docs/EXAMPLE.md)
+##[Click for full Example](docs/EXAMPLE.md)

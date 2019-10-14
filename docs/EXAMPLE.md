@@ -1,6 +1,6 @@
 ## Example
 
-[Code](docs/example.tsx) 
+[Code](./example.tsx) 
 
 ### Step by step
 #### - Define your context
