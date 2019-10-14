@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack --config config/webpack.config.js",
-    "preparePublish": "npm run build && npm run copyForPublish",
-    "copyForPublish": "cp -rf package.json README.md dist"
+    "build": "webpack --config config/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -32,13 +30,13 @@
     "@types/jest": "24.0.18",
     "@types/react": "16.9.5",
     "@types/react-dom": "16.9.1",
+    "awesome-typescript-loader": "5.2.1",
     "clean-webpack-plugin": "3.0.0",
-    "declaration-bundler-webpack-plugin": "1.0.3",
+    "copy-webpack-plugin": "5.0.4",
     "jest": "24.9.0",
     "react": "16.10.2",
     "react-dom": "16.10.2",
     "ts-jest": "24.1.0",
-    "ts-loader": "6.2.0",
     "typescript": "3.6.4",
     "webpack": "4.41.1",
     "webpack-cli": "3.3.9"

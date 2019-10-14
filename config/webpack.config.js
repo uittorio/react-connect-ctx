@@ -1,5 +1,6 @@
 /*globals module, require */
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -16,10 +17,7 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx$/,
-                loader: 'ts-loader',
-                options: {
-                    onlyCompileBundledFiles: true
-                }
+                loader: 'awesome-typescript-loader'
             }
         ]
     },
@@ -29,5 +27,10 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
+        new CopyPlugin([
+            { from: 'package.json' },
+            { from: 'README.md' },
+            { from: './src/index.ts' },
+        ]),
     ]
 };
