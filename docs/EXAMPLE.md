@@ -1,37 +1,38 @@
-## Example
-
-[Code](./example.tsx) 
+## Example  
 
 ### Step by step
-#### - Define your context
+#### - Define your context [Code](example/context.ts) 
 ```ts
 export const APP_CONTEXT: React.Context<AppContext> = React.createContext(null);
+
+export interface AppContext {
+  personService: IPersonService;
+}
 ```
-#### - Define context value
+#### - Define context value [Code](example/person/personService.ts) 
 ```ts
 
-interface IPersonService {
+export interface IPersonService {
   getName(personId: string): Promise<string>;
 }
 
-interface AppContext {
-  personService: IPersonService;
-}
-
-function personService(): IPersonService {
+export function personService(): IPersonService {
   return {
     getName(id: string): Promise<string> {
       return Promise.resolve("A name") // fake implementation
     }
   }
 }
+```
+#### - Export dependencies [Code](example/dependencies.ts)
 
+```ts
 export const appDependencies: AppContext = {
   personService: personService()
 }
-
 ```
-#### - Add context to your app
+
+#### - Add context to your app [Code](example/app.tsx)
 ```ts
 function App() {
     return <APP_CONTEXT.Provider value={appDependencies}>
@@ -39,7 +40,7 @@ function App() {
     </APP_CONTEXT.Provider>
 }
 ```
-#### - Create the component you want to connect
+#### - Create the component you want to connect [Code](example/person/person.tsx)
 ```ts
 
 interface PersonComponentProps {
@@ -62,7 +63,7 @@ function PersonComponent(props: PersonComponentProps) {
 }
 ```
 
-#### - Connect the component
+#### - Connect the component [Code](example/person/person.hoc.tsx)
 ```ts
 function mapContextToProps(context: AppContext) {
   return {
@@ -72,7 +73,7 @@ function mapContextToProps(context: AppContext) {
 
 export const PersonComponentHOC = connectContext(APP_CONTEXT)(PersonComponent, mapContextToProps);
 ```
-#### - Use it
+#### - Use it [Code](example/person/personWrapper.tsx)
 ```ts
 function PersonWrapperComponent() {
   return <PersonComponentHOC id='123'/>
